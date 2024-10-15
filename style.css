@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: #2c2c2c;
+  color: #ffffff;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+button {
+  background: #04AA6D;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  border-radius: .5rem;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+}
