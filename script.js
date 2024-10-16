@@ -18,10 +18,9 @@ const thankyouScript = referrerIndex === -1 ? thankyou.at(0) : thankyou.at(refer
 
 const search = new URLSearchParams(window.location.search)
 const upsell = search.get('upsell') ?? '38527'
-const local = search.get('local')
+const redirectTo = search.get('redirectTo')
 
-const url = local ?? referrerCheckout
-const redirectUrl = `${url}/${upsell}?u=1`
+const redirectUrl = redirectTo ? decodeURIComponent(redirectTo) : `${referrerCheckout}/${upsell}?u=1`
 
 bntRedirect.innerHTML = bntRedirect.textContent.replace('{{checkoutId}}', `<span>${redirectUrl}</span>`)
 
