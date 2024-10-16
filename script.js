@@ -1,4 +1,5 @@
-const bntRedirect = document.querySelector('#bnt-redirect');
+const form = document.querySelector('#form-redirect');
+const input = document.querySelector('#form-redirect > input');
 
 const referrers = [
   'https://sun-sale-page-front-v4.testzz.ninja',
@@ -22,12 +23,17 @@ const redirectTo = search.get('redirectTo')
 
 const redirectUrl = redirectTo ? decodeURIComponent(redirectTo) : `${referrerCheckout}/${upsell}?u=1`
 
-bntRedirect.innerHTML = bntRedirect.textContent.replace('{{checkoutId}}', `<span>${redirectUrl}</span>`)
+input.setAttribute('value', redirectUrl)
+input.focus()
 
 const script = document.createElement('script')
 script.setAttribute('src', thankyouScript);
 document.body.appendChild(script)
 
-bntRedirect.addEventListener('click', () => {
-  window.location.href = redirectUrl
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(e.target)
+
+  window.location.href = formData.get('url') ?? redirectUrl
 })

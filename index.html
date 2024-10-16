@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,14 @@
   <link rel="stylesheet" href="style.css">
   <title>Custom Thankyou</title>
 </head>
-<body>
-  <button id="bnt-redirect">Redirecionar para o produto {{checkoutId}}</button>
 
-  <script src="./script.js" type="module" async defer ></script>
+<body>
+  <form id="form-redirect">
+    <input name="url" type="url" required>
+    <input name="submit" type="submit" value="Redirecionar para o produto">
+  </form>
+
+  <script src="./script.js" type="module" async defer></script>
 </body>
+
 </html>
