@@ -13,7 +13,7 @@ const thankyou = [
   'https://cdn.testzz.ninja/sun/thankyou-qa2/thankyou.js',
 ]
 
-const referrerIndex = referrers.findIndex((v) => v === document.referrer);
+const referrerIndex = referrers.findIndex((v) => document.referrer.includes(v))
 const referrerCheckout = referrerIndex === -1 ? referrers.at(0) : referrers.at(referrerIndex)
 const thankyouScript = referrerIndex === -1 ? thankyou.at(0) : thankyou.at(referrerIndex)
 
